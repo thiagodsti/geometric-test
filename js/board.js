@@ -1,6 +1,7 @@
 define(function (require) {
     "use strict";
     const Point = require('./point');
+    const Parallelogram = require('./parallelogram');
 
     const points = [];
     let canvas = null;
@@ -13,10 +14,6 @@ define(function (require) {
         canvas.height = window.innerHeight;
 
         attachEvents();
-
-
-        //this.canvas.height = window.innerHeight;
-
         //this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     }
@@ -29,10 +26,22 @@ define(function (require) {
         const x = e.clientX;
         const y = e.clientY;
 
-        if (points.length < 3) {
+        if (points.length >= 3) {
+            return;
+        }
+
+        if (points.length < 2) {
             addPoint({ x, y });
             return;
         }
+        addPoint({ x, y });
+
+        const x4 = points[0].x - points[1].x + points[2].x;
+        const y4 = points[0].y - points[1].y + points[2].y;
+        addPoint({x: x4, y: y4})
+
+        drawParallelogram();
+
     }
 
     function addPoint({ x, y }) {
@@ -45,6 +54,10 @@ define(function (require) {
                 ctx
             );
         })
+    }
+
+    function drawParallelogram() {
+        new Parallelogram(points, ctx);
     }
 
     return Board;

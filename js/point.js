@@ -10,8 +10,6 @@ define(function (require) {
         ctx.lineWidth = 1;
         ctx.strokeStyle = config.pointColor;
         ctx.stroke();
-
-
         ctx.font = config.font;
         ctx.fillText(`x: ${x}`, x - 10, y + 20);
         ctx.fillText(`y: ${y}`, x - 10, y + 30);

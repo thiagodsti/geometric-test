@@ -1,25 +1,51 @@
-define(function (require){
+define(function (require) {
     "use strict";
-    let Point = require('./point');
+    const Point = require('./point');
 
-    "use strict";
+    const points = [];
+    let canvas = null;
+    let ctx = null;
+
     function Board(elem) {
-        this.canvas = elem;
-        this.ctx = this.canvas.getContext("2d");
-        console.log(document.body.clientWidth);
-        console.log(window.innerHeight);
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
-  
-  
+        canvas = elem;
+        ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        attachEvents();
+
+
         //this.canvas.height = window.innerHeight;
-        
-        let p = new Point(50, 40, this.ctx);
-        
+
         //this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     }
-  
-    
+
+    function attachEvents() {
+        canvas.addEventListener('mousedown', handleClick.bind(this), false);
+    }
+
+    function handleClick(e) {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        if (points.length < 3) {
+            addPoint({ x, y });
+            return;
+        }
+    }
+
+    function addPoint({ x, y }) {
+        points.push({ x, y });
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        points.map(point => {
+            new Point(
+                point.x,
+                point.y,
+                ctx
+            );
+        })
+    }
+
     return Board;
 });

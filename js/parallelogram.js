@@ -2,8 +2,6 @@
 define(function (require) {
 
     const config = require('./config');
-    let area;
-    let centreOfMass;
 
     function Parallelogram(points, context) {
         context.beginPath();
@@ -14,13 +12,13 @@ define(function (require) {
         context.stroke();
 
 
-        centreOfMass = calculateCentreOfMass(points);
-        area = calculateArea(points);
+        this.centreOfMass = calculateCentreOfMass(points);
+        this.area = calculateArea(points);
 
         context.font = config.font;
-        context.fillText(`x: ${centreOfMass.x}`, centreOfMass.x, centreOfMass.y + 10);
-        context.fillText(`y: ${centreOfMass.y}`, centreOfMass.x, centreOfMass.y + 20);
-        context.fillText(`area: ${area}`, centreOfMass.x, centreOfMass.y + 30);
+        context.fillText(`x: ${this.centreOfMass.x}`, this.centreOfMass.x, this.centreOfMass.y + 10);
+        context.fillText(`y: ${this.centreOfMass.y}`, this.centreOfMass.x, this.centreOfMass.y + 20);
+        context.fillText(`area: ${this.area}`, this.centreOfMass.x, this.centreOfMass.y + 30);
     }
 
     function calculateCentreOfMass(points) {

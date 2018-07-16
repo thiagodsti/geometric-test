@@ -2,14 +2,15 @@ define(function (require) {
     "use strict";
     const Point = require('./point');
     const Parallelogram = require('./parallelogram');
+    const Circle = require('./circle');
 
     const points = [];
     let canvas = null;
-    let ctx = null;
+    let context = null;
 
     function Board(elem) {
         canvas = elem;
-        ctx = canvas.getContext("2d");
+        context = canvas.getContext("2d");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
@@ -40,24 +41,31 @@ define(function (require) {
         const y4 = points[0].y - points[1].y + points[2].y;
         addPoint({x: x4, y: y4})
 
-        drawParallelogram();
+        const parallelogram = drawParallelogram();
+        console.log(parallelogram);
+        drawCircle(parallelogram);
+
 
     }
 
     function addPoint({ x, y }) {
         points.push({ x, y });
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        context.clearRect(0, 0, canvas.width, canvas.height);
         points.map(point => {
             new Point(
                 point.x,
                 point.y,
-                ctx
+                context
             );
         })
     }
 
     function drawParallelogram() {
-        new Parallelogram(points, ctx);
+        return new Parallelogram(points, context);
+    }
+
+    function drawCircle(parallelogram) {
+        new Circle(parallelogram.area, parallelogram.centreOfMass, context);
     }
 
     return Board;

@@ -1,26 +1,26 @@
+"use strict";
 define(function (require) {
 
     const config = require('./config');
     let area;
     let centreOfMass;
 
-    "use strict";
-    function Parallelogram(points, ctx) {
-        ctx.beginPath();
-        ctx.moveTo(points[0].x, points[0].y);
-        points.map(p => ctx.lineTo(p.x, p.y))
-        ctx.closePath()
-        ctx.strokeStyle = config.parallelogramColor;
-        ctx.stroke();
+    function Parallelogram(points, context) {
+        context.beginPath();
+        context.moveTo(points[0].x, points[0].y);
+        points.map(p => context.lineTo(p.x, p.y))
+        context.closePath()
+        context.strokeStyle = config.parallelogramColor;
+        context.stroke();
 
 
         centreOfMass = calculateCentreOfMass(points);
         area = calculateArea(points);
 
-        ctx.font = config.font;
-        ctx.fillText(`x: ${centreOfMass.x}`, centreOfMass.x, centreOfMass.y + 10);
-        ctx.fillText(`y: ${centreOfMass.y}`, centreOfMass.x, centreOfMass.y + 20);
-        ctx.fillText(`area: ${area}`, centreOfMass.x, centreOfMass.y + 30);
+        context.font = config.font;
+        context.fillText(`x: ${centreOfMass.x}`, centreOfMass.x, centreOfMass.y + 10);
+        context.fillText(`y: ${centreOfMass.y}`, centreOfMass.x, centreOfMass.y + 20);
+        context.fillText(`area: ${area}`, centreOfMass.x, centreOfMass.y + 30);
     }
 
     function calculateCentreOfMass(points) {

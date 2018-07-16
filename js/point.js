@@ -3,16 +3,16 @@ define(function (require) {
     const config = require('./config');
 
     "use strict";
-    function Point(x, y, ctx) {
+    function Point(x, y, context) {
         const r = config.pointDiameter / 2;
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, 2 * Math.PI, false);
-        ctx.lineWidth = 1;
-        ctx.strokeStyle = config.pointColor;
-        ctx.stroke();
-        ctx.font = config.font;
-        ctx.fillText(`x: ${x}`, x - 10, y + 20);
-        ctx.fillText(`y: ${y}`, x - 10, y + 30);
+        context.beginPath();
+        context.arc(x, y, r, 0, 2 * Math.PI, false);
+        context.lineWidth = 1;
+        context.strokeStyle = config.pointColor;
+        context.stroke();
+        context.font = config.font;
+        context.fillText(`x: ${x}`, x - 10, y + 20);
+        context.fillText(`y: ${y}`, x - 10, y + 30);
     }
 
     return Point;

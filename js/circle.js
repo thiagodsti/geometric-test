@@ -1,6 +1,6 @@
 define(function (require) {
 
-    const config = require('./config');
+    const color = "yellow";
 
     "use strict";
     function Circle(area, centreOfMass, context) {
@@ -11,7 +11,7 @@ define(function (require) {
         context.beginPath();
         context.arc(x, y, r, 0, 2 * Math.PI, false);
         context.lineWidth = 1;
-        context.strokeStyle = config.circleColor;
+        context.strokeStyle = color;
         context.stroke();
     }
 

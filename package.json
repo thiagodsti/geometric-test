@@ -11,13 +11,12 @@
     "url": "git+https://github.com/thiagodsti/canvas-test.git"
   },
   "author": "Thiago",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/thiagodsti/canvas-test/issues"
   },
   "homepage": "https://github.com/thiagodsti/canvas-test#readme",
   "dependencies": {
-    "connect": "^3.6.6",
-    "serve-static": "^1.13.2"
+    "express": "^4.16.3"
   }
 }

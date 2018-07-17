@@ -1,8 +1,8 @@
+"use strict";
 define(function (require) {
 
     const color = "yellow";
 
-    "use strict";
     function Circle(area, centreOfMass, context) {
         const x = centreOfMass.x;
         const y = centreOfMass.y;

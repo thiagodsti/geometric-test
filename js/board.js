@@ -1,5 +1,5 @@
+"use strict";
 define(function (require) {
-    "use strict";
     const Point = require('./point');
     const Parallelogram = require('./parallelogram');
     const Circle = require('./circle');
@@ -17,12 +17,19 @@ define(function (require) {
 
         attachEvents();
 
+        this.reset = reset;
+
     }
 
     function attachEvents() {
         canvas.addEventListener('mousedown', handleClick.bind(this), false);
         canvas.addEventListener('mouseup', mouseup.bind(this), false);
         canvas.addEventListener('mousemove', mousemove.bind(this), false);
+    }
+
+    function reset() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        points.length = 0;
     }
 
     function mousemove(e) {

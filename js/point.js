@@ -1,10 +1,10 @@
+"use strict";
 define(function (require) {
 
     const color = "red";
     const font = "12px Nunito";
     const diameter = 11;
 
-    "use strict";
     function Point(x, y, context) {
         const r = diameter / 2;
         context.beginPath();

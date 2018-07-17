@@ -1,0 +1,23 @@
+{
+  "name": "geometric",
+  "version": "1.0.0",
+  "description": "Play with Shapes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagodsti/canvas-test.git"
+  },
+  "author": "Thiago",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagodsti/canvas-test/issues"
+  },
+  "homepage": "https://github.com/thiagodsti/canvas-test#readme",
+  "dependencies": {
+    "connect": "^3.6.6",
+    "serve-static": "^1.13.2"
+  }
+}

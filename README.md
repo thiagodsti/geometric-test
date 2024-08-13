@@ -36,13 +36,3 @@ You can test the application here https://geometric-test.herokuapp.com
 `docker run -d -p 8080:8080 geometric`
 
 - The project will be acessible on http://localhost:8080
-
---------
-
-### Contacts ###
-
-Thiago Diniz da Silveira
-
-+55 48 988416541
-
-thiagods.ti@gmail.com

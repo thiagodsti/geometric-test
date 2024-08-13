@@ -15,7 +15,7 @@ There is also a Reset button to start over.
 
 ### Live
 
-You can test the application here [https://geometric-test.herokuapp.com](https://geometric-test.vercel.app/)
+You can test the application here [https://geometric-test.vercel.app/](https://geometric-test.vercel.app/)
 
 ### How do I get set up? ###
 

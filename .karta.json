@@ -1,5 +1,7 @@
-{
-  "who": "GDI",
-  "what": "endpoint",
-  "value": "/v1/geometrics"
-}
+[
+  {
+    "who": "GDI",
+    "what": "endpoint",
+    "value": "/v1/geometrics"
+  }
+]
